@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface HotelRepository extends MongoRepository<Hotel, String> {
+public interface HotelMongoRepository extends MongoRepository<Hotel, String> {
     @Query(value = "{'address.country' : ?0}")
     List<Hotel> findByCountry(String country);
 }
